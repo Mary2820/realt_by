@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  name: my-personal-computer
+  name: 'my-personal-computer'
 
 steps:
 - task: Maven@4
