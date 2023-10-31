@@ -23,8 +23,8 @@ public class SearchApartTest extends BaseTest {
     @Test
     public void checkIsSelectedRegion(){
         basePage
-                .open("https://realt.by")
-                .acceptCookies();
+                .open("https://realt.by");
+//                .acceptCookies();
 
         realtHomePage
                 .SelectRegion();
