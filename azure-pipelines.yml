@@ -11,19 +11,10 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '$(System.DefaultWorkingDirectory)/target/surefire-reports/testng-results.xml'
 
-# - task: PythonScript@0
-#   inputs:
-#     scriptSource: 'inline'
-#     script: |
-#       import os
-#         files=[f for f in os.listdir('$(System.DefaultWorkingDirectory)/test-results') if os.path.isfile(f)]
-#         for f in files:
-#           print(f)
-
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(System.DefaultWorkingDirectory)/target/surefire-reports'
-    Contents: 'testng-results.xml'
+    Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     OverWrite: true
 
