@@ -10,6 +10,3 @@ steps:
     mavenPomFile: 'pom.xml'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    # mavenVersionOption: 'Path'
-    # mavenDirectory: 'E:\maven\apache-maven-3.9.5'
