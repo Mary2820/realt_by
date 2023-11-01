@@ -9,11 +9,20 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    testResultsFiles: '$(System.DefaultWorkingDirectory)/test-results/TEST-*.xml'
+
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'inline'
+    script: |
+      import os
+        files=[f for f in os.listdir('$(System.DefaultWorkingDirectory)/test-results') if os.path.isfile(f)]
+        for f in files:
+          print(f)
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '**/surefire-reports'
+    SourceFolder: '$(System.DefaultWorkingDirectory)/test-results'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     OverWrite: true
