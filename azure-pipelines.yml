@@ -9,7 +9,7 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     publishJUnitResults: true
-    testResultsFiles: '$(System.DefaultWorkingDirectory)/TEST-*.xml'
+    testResultsFiles: '$(System.DefaultWorkingDirectory)/target/surefire-reports/testng-results.xml'
 
 # - task: PythonScript@0
 #   inputs:
@@ -22,8 +22,8 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: 'TEST-*.xml'
+    SourceFolder: '$(System.DefaultWorkingDirectory)/target/surefire-reports'
+    Contents: 'testng-results.xml'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     OverWrite: true
 
