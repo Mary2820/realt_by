@@ -23,7 +23,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: '**'
+    Contents: 'TEST-*.xml'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     OverWrite: true
 
