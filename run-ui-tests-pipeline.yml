@@ -12,6 +12,9 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
+- task: CmdLine@2
+  inputs:
+    script: 'cd'
 - task: CopyFiles@2
   inputs:
     SourceFolder: '*/surefire-reports'
