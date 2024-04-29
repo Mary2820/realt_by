@@ -1,6 +1,6 @@
 package tests.base;
 
-import common.CommonAction;
+import common.CommonActions;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import pages.base.BasePage;
@@ -9,7 +9,7 @@ import pages.realthome.RealtHomePage;
 import pages.regionpage.GrodnoRegionPage;
 
 public class BaseTest {
-    protected WebDriver driver = CommonAction.createDriver();
+    protected WebDriver driver = CommonActions.createDriver();
     protected BasePage basePage = new BasePage(driver);
     protected RealtHomePage realtHomePage = new RealtHomePage(driver);
     protected RealtListingPage realtListingPage = new RealtListingPage(driver);

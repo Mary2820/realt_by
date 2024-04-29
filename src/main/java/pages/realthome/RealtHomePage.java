@@ -14,12 +14,12 @@ public class RealtHomePage extends BasePage {
         super(driver);
     }
 
-    By countRooms = By.xpath("//select[@id='rooms']");
-    By option2Rooms = By.xpath("//select[@id='rooms']/option[@value='2']");
-    By findBtn = By.xpath("//div[@id='residentialInputs']//a[text()='Найти']");
+    private final By countRooms = By.xpath("//select[@id='rooms']");
+    private final By option2Rooms = By.xpath("//select[@id='rooms']/option[@value='2']");
+    private final By findBtn = By.xpath("//div[@id='residentialInputs']//a[text()='Найти']");
 
-    By dropdown = By.xpath("//div[@class='region-selection']");
-    By region = By.xpath("//div[@class='region-selection']//a[@data-id='4']");
+    private final By dropdown = By.xpath("//div[@class='region-selection']");
+    private final By region = By.xpath("//div[@class='region-selection']//a[@data-id='4']");
 
     public RealtHomePage enterCountRooms() {
         driver.findElement(countRooms).click();

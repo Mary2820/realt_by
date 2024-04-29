@@ -9,10 +9,10 @@ import java.util.concurrent.TimeUnit;
 import static common.Config.IMPLICIT_WAIT;
 import static common.Config.PLATFORM_AND_BROWSER;
 
-public class CommonAction {
+public class CommonActions {
     private static WebDriver driver = null;
 
-    private CommonAction() {
+    private CommonActions() {
 
     }
 
